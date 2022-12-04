@@ -43,6 +43,6 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('user.index');
     })->name('dashboard');
 });
