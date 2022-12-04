@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" href="panel/assets/images/favicon.png" >
+
+        <link rel="icon" href="{{ asset('userbackend/panel/assets/images/favicon.png') }}" >
         <!--Page title-->
         <title>Admin easy Learning</title>
         <!--bootstrap-->
@@ -411,7 +412,6 @@
         </div><!--/ wrapper -->
 
 
-
         <!-- jquery -->
         <script src="{{ asset( 'userbackend/panel/assets/js/jquery.min.js' ) }}"></script>
         <!-- popper Min Js -->
@@ -421,7 +421,7 @@
         <!-- Fontawesome-->
         <script src="{{ asset('userbackend/panel/assets/js/all.min.js') }}"></script>
         <!-- metis menu -->
-        <script src="{{ asset('puserbackend/anel/assets/plugins/metismenu-3.0.4/assets/js/metismenu.js') }}"></script>
+        <script src="{{ asset('userbackend/anel/assets/plugins/metismenu-3.0.4/assets/js/metismenu.js') }}"></script>
         <script src="{{ asset('userbackend/panel/assets/plugins/metismenu-3.0.4/assets/js/mm-vertical-hover.js') }}"></script>
         <!-- nice scroll bar -->
         <script src="{{ asset('userbackend/panel/assets/plugins/scrollbar/jquery.nicescroll.min.js') }}"></script>
