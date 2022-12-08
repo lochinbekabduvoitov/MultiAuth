@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MainUserController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -35,8 +36,6 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
-
 Route::middleware([
     'auth:sanctum,web',
     config('jetstream.auth_session'),
@@ -46,3 +45,9 @@ Route::middleware([
         return view('user.index');
     })->name('dashboard');
 });
+
+
+//Main user route
+
+Route::get('/user/logout',[MainUserController::class, 'Logout'])->name('user.logout');
+Route::get('/user/profile',[MainUserController::class, 'UserProfile'])->name('user.profile');
