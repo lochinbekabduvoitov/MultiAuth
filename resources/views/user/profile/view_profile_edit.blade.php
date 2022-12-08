@@ -2,21 +2,22 @@
 @section('user')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <div class="container mt-5">
-    <form>
+    <form method="POST" action="{{ route('user.profile.store') }}" enctype="multipart/form-data">
+        @csrf
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">User Name</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" value="{{ $editData->name}}" >
+          <input type="text" class="form-control" name="name" id="exampleInputEmail1" value="{{ $editData->name}}" >
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">User Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" value="{{ $editData->email}}" >
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" value="{{ $editData->email}}" >
           </div>
         <div class="mb-3 ">
             <label for="formFile" class="form-label">User image</label>
-            <input class="form-control" type="file" id="image">
+            <input class="form-control" name="profile_photo_path" type="file" id="image">
         </div>
         <div class="mb-3 ">
-            <img id="showImage" src="{{ (!empty($user->profile_photo_path)) ? url('upload/user_images/'.$user->profile_photo_path) : url('upload/noimages.jpg')}}" class="card-img-top"  style="width: 100px; height:100px">
+            <img id="showImage" src="{{ (!empty($editData->profile_photo_path)) ? url('upload/user_images/'.$editData->profile_photo_path) : url('upload/noimages.jpg')}}" class="card-img-top"  style="width: 100px; height:100px">
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
@@ -33,7 +34,7 @@
             reader.readAsDataUrl(e.target.files['0']);
         })
     })
-    
+
 </script>
 
 

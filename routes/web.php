@@ -52,3 +52,4 @@ Route::middleware([
 Route::get('/user/logout',[MainUserController::class, 'Logout'])->name('user.logout');
 Route::get('/user/profile',[MainUserController::class, 'UserProfile'])->name('user.profile');
 Route::get('/user/profile/edit',[MainUserController::class, 'UserProfileEdit'])->name('user.profile.edit');
+Route::post('/user/profile/store',[MainUserController::class, 'UserProfileStore'])->name('user.profile.store');
